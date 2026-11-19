@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="brand">✦ Life Dashboard</h1>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode">
+      <span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span>
+    </button>
+  </header>
+
+  <main class="dashboard">
+    <!-- Greeting Card (full width top) -->
+    <section class="card greeting-card" aria-label="Greeting">
+      <div class="greeting-time" id="clock">00:00:00</div>
+      <div class="greeting-date" id="date">—</div>
+      <div class="greeting-text">
+        <span id="greeting">Good Morning</span>
+        <span class="greeting-comma">,</span>
+        <span class="greeting-name" id="nameDisplay">there</span>
+        <button id="editNameBtn" class="icon-btn" type="button" title="Edit name" aria-label="Edit name">✏️</button>
+      </div>
+      <div class="name-edit-row">
+        <input id="nameInput" class="name-input hidden" type="text" placeholder="Enter your name" maxlength="24" />
+        <button id="saveNameBtn" class="btn btn-small hidden" type="button">Save</button>
+      </div>
+    </section>
+
+    <!-- Focus Timer Card -->
+    <section class="card timer-card" aria-label="Focus Timer">
+      <h2 class="card-title">Focus Timer</h2>
+      <div class="timer-display" id="timerDisplay">25:00</div>
+      <div class="timer-label" id="timerLabel">Ready to focus</div>
+      <div class="timer-controls">
+        <button id="startBtn" class="btn btn-primary" type="button">Start</button>
+        <button id="stopBtn" class="btn" type="button">Stop</button>
+        <button id="resetBtn" class="btn" type="button">Reset</button>
+      </div>
+    </section>
+
+    <!-- Tasks Card -->
+    <section class="card tasks-card" aria-label="Tasks">
+      <h2 class="card-title">Tasks</h2>
+      <form id="taskForm" class="task-form" autocomplete="off">
+        <input id="taskInput" type="text" placeholder="Add a new task..." maxlength="100" />
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
+      <div id="taskWarning" class="task-warning hidden" role="alert"></div>
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+      <p id="taskEmpty" class="empty-hint hidden">No tasks yet. Add one above.</p>
+    </section>
+
+    <!-- Quick Links Card (full width bottom) -->
+    <section class="card links-card" aria-label="Quick Links">
+      <h2 class="card-title">Quick Links</h2>
+      <form id="linkForm" class="link-form" autocomplete="off">
+        <input id="linkName" type="text" placeholder="Link name" maxlength="40" />
+        <input id="linkUrl" type="url" placeholder="https://example.com" />
+        <button type="submit" class="btn btn-primary">Add Link</button>
+      </form>
+      <div id="linkWarning" class="task-warning hidden" role="alert"></div>
+      <div id="linksContainer" class="links-grid"></div>
+      <p id="linksEmpty" class="empty-hint hidden">No links yet. Add your favorite sites above.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Your data is saved locally in your browser.</span>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
